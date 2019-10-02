@@ -26,6 +26,43 @@
     <!--[if lt IE 9]>
        <script type="text/javascript" src="js/html5shiv.min.js"></script>
     <![endif]-->
+    <script>
+        var example = ["God Loves You.", "Come Join Us", "We are so glad to have YOU here with us."];
+
+        textSequence(0);
+        function textSequence(i) {
+
+            if (example.length > i) {
+                setTimeout(function() {
+                    document.getElementById("sequence").innerHTML = example[i];
+                    textSequence(++i);
+                }, 4000); // 1 second (in milliseconds)
+
+            } else if (example.length == i) { // Loop
+                textSequence(0);
+            }
+
+        }
+    </script>
+    <style type="text/css">
+      .elementToFadeInAndOut {
+    width:200px;
+    height: 200px;
+    -webkit-animation: fadeinout 4s linear forwards;
+    animation: fadeinout 4s linear forwards;
+    animation-iteration-count: infinite;
+    opacity: 0;}
+
+@-webkit-keyframes fadeinout {
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  50% { opacity: 1; }
+}
+    </style>
+
+
   </head>
   <body>
     <!--PRELOADER-->
@@ -96,7 +133,7 @@
                   <div class="hero-content">
                     <h1>EFCIE 恩聯台福教會</h1>
                     <br>
-                    <span class="typed"></span>
+                    <span class=elementToFadeInAndOut><span id="sequence">Welcome!!</span></span>
                   </div>
               </div>
               <div class="mouse-icon margin-20">
@@ -120,7 +157,7 @@
                   <div class="wrap-about">
                     <div class="w-content">
 <section>
-<strong>EFCIE 恩聯台福教會</strong> is an Taiwanese Christian Church in Riverside (near by UC Riverside). Here is also the known as the best place for everybody to hang out and meet new friends.</section>
+<strong>EFCIE 恩聯台福教會</strong> is a Taiwanese Christian Church in Riverside (near by UC Riverside). It also known as the best place for everybody to hang out and meet new friends.</section>
 <br />
 <section>We are more greatful to have you join our big family</section>
                       <h5 class="name">
@@ -652,6 +689,7 @@ Email: efcieweb@gmail.com<br />
     <!--/.CONTENT-WRAP END-->
     </div>
     
+
 
     <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script src="js/jquery.appear.js" type="text/javascript"></script>
